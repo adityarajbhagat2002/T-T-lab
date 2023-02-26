@@ -1,0 +1,1 @@
+Write a program to create a 4x4 matrix with values 1,2,3 just below & above the diagonal, rest zeros.
