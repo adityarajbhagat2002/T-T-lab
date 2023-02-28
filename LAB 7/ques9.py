@@ -13,3 +13,5 @@ print(f'Original Array: {arr}')
 arr[arr % 2 == 1] = -1
 
 print(f'Array after replacing odd numbers with -1: \n {arr}')
+
+
