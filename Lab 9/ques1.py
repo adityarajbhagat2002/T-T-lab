@@ -1,15 +1,16 @@
 import pandas as pd
-ds1 = pd.Series([2, 4, 6, 8, 10])
-ds2 = pd.Series([1, 3, 5, 7, 9])
-ds = ds1 + ds2
-print("Add two Series:")
-print(ds)
-print("Subtract two Series:")
-ds = ds1 - ds2
-print(ds)
-print("Multiply two Series:")
-ds = ds1 * ds2
-print(ds)
-print("Divide Series1 by Series2:")
-ds = ds1 / ds2
-print(ds)
+
+df_quizScore= pd.read_excel(r"C:\Users\KIIT\Downloads\Quiz.xlsx",sheet_name="Form Responses 1")
+#print(df_quizScore)
+
+df_attendance=pd.read_excel(r"C:\Users\KIIT\Downloads\Attendance.xlsx",sheet_name="CSE17-T&T Lab")
+#print(df_attendance)
+
+#print(df_quizScore[df_quizScore['Timestamp'] >= pd.Timestamp(2023, 2, 14, 0, 0, 0)]['Score'])
+df_attendance['QUIZ-1  (SCORE/ ABS)'] = df_quizScore[df_quizScore['Timestamp'] < pd.Timestamp(2023, 2, 14, 0, 0, 0)]['Score']
+df_attendance['QUIZ-2  (SCORE/ ABS)'] = df_quizScore[df_quizScore['Timestamp'] > pd.Timestamp(2023, 2, 14, 0, 0, 0)]['Score']
+print(df_attendance['QUIZ-1  (SCORE/ ABS)'])
+#print(df_attendance['QUIZ-2  (SCORE/ ABS)'])
+
+
+
