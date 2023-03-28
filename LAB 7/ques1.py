@@ -12,3 +12,4 @@ newArray=np.char.add(a,b)
 
 print("New Array : ")
 print(newArray)
+
