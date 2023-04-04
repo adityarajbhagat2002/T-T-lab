@@ -1,6 +1,6 @@
 import pandas as pd
 
-marks = pd.read_excel('D:\codes\college\TTL\class 9\\attendanceChanged.xlsx')
+marks = pd.read_excel(r'C:\Users\KIIT\Downloads\Attendance.xlsx', sheet_name='Sheet1')
 
 marks.drop('Average Marks', axis=1, inplace=True)
 marks.insert(6, 'Average Marks', 0)
@@ -13,4 +13,4 @@ for index, row in marks.iterrows():
     marks.loc[index, 'Average Marks'] = avg
 
 print(marks)
-marks.to_excel('D:\codes\college\TTL\class 9\\attendanceChanged.xlsx')
+marks.to_excel(r'C:\Users\KIIT\Downloads\Attendance.xlsx',sheet_name='Sheet1')

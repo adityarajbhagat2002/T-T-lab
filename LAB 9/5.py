@@ -1,6 +1,6 @@
 import pandas as pd
 
-marks = pd.read_excel('D:\codes\college\TTL\class 9\\attendanceChanged.xlsx')
+marks = pd.read_excel(r'C:\Users\KIIT\Downloads\Attendance.xlsx', sheet_name='Sheet1')
 
 displayFrame = pd.DataFrame(columns=['Sl. No.', 'Roll Number', 'Score'])
 

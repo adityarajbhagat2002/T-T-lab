@@ -1,13 +1,13 @@
 import pandas as pd
 
-answers = pd.read_excel('D:\codes\college\TTL\class 9\\quizAnswers.xlsx')
+answers = pd.read_excel(r'C:\Users\KIIT\Downloads\QUIZ-ANSWERS.xlsx' , sheet_name='Sheet1')
 answers = answers.to_dict('records')
-quizFrame = pd.read_excel('D:\codes\college\TTL\class 9\\quiz.xlsx')
+quizFrame = pd.read_excel(r'C:\Users\KIIT\Downloads\Quiz.xlsx', sheet_name='Form Responses 1')
 
 displayFrame = pd.DataFrame(columns=['Q. No.', 'No. of Students Answered correctly',
                             'No. of Students Answered incorrectly', 'Difficulty Level(%)'])
 quizFrame = quizFrame[quizFrame['Timestamp']
-                      < pd.Timestamp(2023, 2, 14, 0, 0, 0)]
+                    < pd.Timestamp(2023, 2, 14, 0, 0, 0)]
 
 for ans in answers:
     correct = quizFrame[quizFrame[ans['Q. No.']] == ans['Answer']].shape[0]
